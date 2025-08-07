@@ -1,0 +1,13 @@
+### /
+GET http://localhost:3000
+Accept: application/json
+
+### /api/data
+POST http://localhost:3000/api/data
+Content-Type: application/json
+
+{
+  "name": "User",
+  "email": "user@example.com",
+  "age": 30
+}
