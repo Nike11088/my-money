@@ -1,0 +1,36 @@
+import swaggerJsdoc from 'swagger-jsdoc'
+import Category from './schemas/Category.js'
+import Book from './schemas/Book.js'
+import Error from './schemas/Error.js'
+
+const getSpecs = ({ port }) => {
+  const options = {
+    definition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'MyMoney API',
+        version: '1.0.0',
+        description: 'A simple Express Bookstore API',
+      },
+      servers: [
+        {
+          url: `http://localhost:${port}`,
+          description: 'Development server',
+        },
+      ],
+      components: {
+        schemas: {
+          Category,
+          Book,
+          Error
+        }
+      }
+    },
+    // Пути к файлам с JSDoc комментариями
+    apis: ['./src/routes/*.js'],
+  }
+
+  return swaggerJsdoc(options)
+}
+
+export default getSpecs
