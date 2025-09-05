@@ -5,10 +5,11 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "src/app.js",
+  "main": "src/app.ts",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec \"tsx src/app.ts\"",
     "dev:lint": "nodemon --exec \"npm run lint:fix && npm start\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -21,7 +22,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.1",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
     "eslint": "^9.33.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   }
 }

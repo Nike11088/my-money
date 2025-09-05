@@ -3,7 +3,11 @@ import Category from './schemas/Category.js'
 import Book from './schemas/Book.js'
 import Error from './schemas/Error.js'
 
-const getSpecs = ({ port }) => {
+export type SpecsParams = {
+  port: number
+}
+
+const getSpecs = ({ port }: SpecsParams): object => {
   const options = {
     definition: {
       openapi: '3.0.0',

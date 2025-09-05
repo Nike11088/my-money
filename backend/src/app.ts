@@ -8,7 +8,7 @@ import booksRouter from './routes/books.js'
 
 const app = express()
 
-const PORT = process.env.PORT || 3000
+const PORT = Number(process.env.PORT) || 3000
 
 // Middleware
 app.use(cors())
