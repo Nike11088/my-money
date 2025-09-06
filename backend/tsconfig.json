@@ -10,10 +10,14 @@
     "verbatimModuleSyntax": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types"
+    ],
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"],
