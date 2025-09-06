@@ -5,6 +5,7 @@ import getSpecs from './swagger/swagger.js'
 import cors from 'cors'
 import indexRouter from './routes/index.js'
 import booksRouter from './routes/books.js'
+import type { Response, Request, NextFunction } from 'express'
 
 const app = express()
 
@@ -15,7 +16,7 @@ app.use(cors())
 app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')

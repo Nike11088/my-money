@@ -1,4 +1,5 @@
 import express from 'express'
+import type { Response, Request } from 'express'
 
 const router = express.Router()
 
@@ -32,7 +33,7 @@ let nextId = 3
  *               items:
  *                 $ref: '#/components/schemas/Book'
  */
-router.get('/', (req, res) => {
+router.get('/', (req: Request, res: Response) => {
   res.json(books)
 })
 
@@ -66,7 +67,7 @@ router.get('/', (req, res) => {
  *               message: "Book not found"
  *               error: "NOT_FOUND"
  */
-router.get('/:id', (req, res) => {
+router.get('/:id', (req: Request, res: Response) => {
   const id = parseInt(req.params.id)
   const book = books.find(b => b.id === id)
 
@@ -106,7 +107,7 @@ router.get('/:id', (req, res) => {
  *       400:
  *         description: Неверные входные данные
  */
-router.post('/', (req, res) => {
+router.post('/', (req: Request, res: Response) => {
   const { title, author, year } = req.body
 
   if (!title || !author) {
