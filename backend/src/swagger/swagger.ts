@@ -30,7 +30,7 @@ const getSpecs = ({ port }: SpecsParams): object => {
       }
     },
     // Пути к файлам с JSDoc комментариями
-    apis: ['./src/routes/*.js'],
+    apis: ['./src/routes/*.ts'],
   }
 
   return swaggerJsdoc(options)
