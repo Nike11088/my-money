@@ -1,6 +1,13 @@
+export type Category = {
+  name: string
+  icon: {
+    color: string
+  }
+}
+
 export class CategoryService {
   // В реальном приложении здесь будет работа с базой данных
-  categories = [
+  categories: Category[] = [
     {
       name: 'Кафе',
       icon: {
@@ -15,7 +22,7 @@ export class CategoryService {
     }
   ]
 
-  async getAllCategories() {
+  async getAllCategories(): Promise<Category[]> {
     return this.categories
   }
 }
