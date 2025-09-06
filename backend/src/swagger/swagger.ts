@@ -14,7 +14,6 @@ const getSpecs = ({ port }: SpecsParams): object => {
       info: {
         title: 'MyMoney API',
         version: '1.0.0',
-        description: 'A simple Express Bookstore API',
       },
       servers: [
         {
