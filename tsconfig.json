@@ -17,8 +17,8 @@
     "typeRoots": [
       "./typings",
       "./node_modules/@types"
-    ],
+    ]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
+  "exclude": ["node_modules", "dist"]
 }

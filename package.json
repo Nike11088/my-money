@@ -5,7 +5,7 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "./src/app.ts",
+  "main": "src/app.ts",
   "engines": {
     "node": ">=22.14.0 <23.0.0"
   },
@@ -14,8 +14,8 @@
     "start": "node dist/app.js",
     "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec \"tsx src/app.ts\"",
     "dev:lint": "nodemon --exec \"npm run lint:fix && npm start\"",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint backend",
+    "lint:fix": "eslint backend --fix"
   },
   "dependencies": {
     "cors": "^2.8.5",
